@@ -52,6 +52,53 @@ Kuyruğa giren ilk kişi ilk çıkar.
 * Enqueue: Queue'a eleman eklemek için kullanılır.
 * Dequeue: Queue'dan eleman çıkarmak için kullanılır.
 
+```ruby
+class Queue
+  # Bir boş dizi oluşturur.
+  def initialize
+    @queue = []
+  end
+  
+  # Kuyruğa yeni bir öğe ekler.
+  def enqueue(item)
+    @queue.push(item)
+  end
+  
+  # Kuyruktan bir öğe çıkarır ve onu döndürür.
+  def dequeue
+    @queue.shift
+  end
+  
+  # Kuyruktaki öğelerin sayısını döndürür.
+  def size
+    @queue.length
+  end
+  
+  # Kuyruğun boş olup olmadığını kontrol eder.
+  def empty?
+    @queue.empty?
+  end
+  
+  # Kuyruktaki ilk öğeyi döndürür, ancak onu kuyruktan çıkarmaz
+  def peek
+    @queue.first
+  end
+end
+```
+### Kullanımı
+```ruby
+queue = Queue.new
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+
+puts queue.peek # 1
+puts queue.dequeue # 1
+puts queue.dequeue # 2
+puts queue.empty? # false
+puts queue.size # 1
+```
+
 # Hash Table (Hash Tablosu)
 ### Hash Function + Array = Hash Table
 Hash tablosu, anahtar ve değer ikililerinden oluşan bir veri yapısıdır.

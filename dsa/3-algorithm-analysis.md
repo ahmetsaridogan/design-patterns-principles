@@ -23,3 +23,23 @@ Kaynaklar: Programcının harcadığı süre, Kullanılan Hafıza, Programın ç
 * Büyüme Hızı (Rate of Growth): Programa verdiğimiz input boyutu ile çalışma zamanı fonksiyonel olarak birbirine bağlarsak bilgisayarlara ve progralama diline bağlı olmayan bir yapı oluşturmuş oluruz. :) 
 
 
+
+# RAM Modeli
+
+Farklı farklı bilgisayarlarda belli algoritmaları denemek pek yol göstermiyor, donanım spesifik oluyor. Bu yüzden bir hayali makine oluşturup onun üzerinden algoritmaları test edeceğiz.
+
+* Genellenebilir bir analiz yapmak için, her algoritmayı aynı bilgisayar ile test ediyor gibi yapalım
+
+* Bu hayali makineye RAM (Random Access Machine) deniyor, Pc'deki RAM (memory) ile aynı şey değil
+
+# RAM'in Özellikleri
+Bu RAM modelinde Analiz yaparken bir bu varsayımlardan yola çıkacağız
+
+* Her işlem (+, -, and, or vb.) 1 birim zaman alır
+* Döngüler 1 birim zaman değil, içerisinde kaç defa işlem varsa iterasyon sayısı * işlem sayısı kadar birim zaman alır
+* Hafızadan her okuma işlemi içinde 1 birim zaman alır
+
+# Time Complexity
+Algoritmanın verimli olması için belli kurallar vardır.
+
+...devamı gelecek

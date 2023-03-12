@@ -45,6 +45,54 @@ Kitapları üst üste koymak gibi düşünebiliriz. Son eklenen eleman ilk çık
 * Push: Stack'e eleman eklemek için kullanılır.
 * Pop: Stack'ten eleman çıkarmak için kullanılır.
 
+
+```ruby
+class Stack
+  # Bir boş dizi oluşturur.
+  def initialize
+    @stack = []
+  end
+  
+  # Yığıta yeni bir öğe ekler.
+  def push(item)
+    @stack.push(item)
+  end
+  
+  # Yığıttan bir öğe çıkarır ve onu döndürür.
+  def pop
+    @stack.pop
+  end
+  
+  # Yığıttaki öğelerin sayısını döndürür.
+  def size
+    @stack.length
+  end
+  
+  # Yığın boş olup olmadığını kontrol eder.
+  def empty?
+    @stack.empty?
+  end
+  
+  # Yığının en üstündeki öğeyi döndürür, ancak onu yığından çıkarmaz.
+  def peek
+    @stack.last
+  end
+end
+```
+### Kullanımı
+```ruby
+stack = Stack.new
+stack.push(1)
+stack.push(2)
+stack.push(3)
+
+puts stack.peek # 3
+puts stack.pop # 3
+puts stack.pop # 2
+puts stack.empty? # false
+puts stack.size # 1
+```
+
 # Queue (Kuyruk)
 FIFO (First In First Out) mantığı ile çalışır. Eleman topluluğundan oluşan yapıdır,
 Kuyruğa giren ilk kişi ilk çıkar.

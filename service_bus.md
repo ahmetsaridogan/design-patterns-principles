@@ -1,5 +1,13 @@
-# Service Bus
+# Service Bus Nedir?
 
+Service Bus, bir yazılım mimarisi tasarımıdır ve uygulamalar arasında iletişim kurmak için kullanılan bir mesajlaşma çözümüdür. Service Bus, gönderen ve alıcılar arasında mesajlar aracılığıyla bilgi paylaşımını sağlar.
+
+#### Örneğin
+* Bir e-ticaret sitesi, bir ödeme işlemi tamamlandığında sipariş işlemini tamamlamak için kullanılabilir. 
+* Bir uygulama, bir veritabanı veya bir web servisi gibi diğer uygulamalarla etkileşimde bulunmak için de kullanılabilir.
+* Bir işletmenin farklı bölümleri arasında veri paylaşımı yapmak için kullanılabilir. İşletmenin Finans, IK ve Müşteri hizmetleri gibi farklı bölümleri arasında veri paylaşımı yapmak için kullanılabilir. IK bir personeli işten çıkışını yaparken Finans bölümüne bildirim gönderir, personelin çıkış işlemleri ve ücret ödemeleri tamamlayabilir
+
+## Örnek Araçlar
 0 - RabbitMQ: RabbitMQ, açık kaynaklı bir mesajlaşma aracıdır. Yüksek ölçeklenebilirlik ve dayanıklılık sunar. Farklı uygulama bileşenleri arasında veri alışverişini kolaylaştırabilir.
 
 RabbitMQ dezavantajları

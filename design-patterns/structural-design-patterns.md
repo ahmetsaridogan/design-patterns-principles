@@ -1,4 +1,4 @@
-# Structural Design Pattern Nedir?
+# Structural Design Pattern Nedir? (Yapısal Tasarım Deseni)
 
 Structural Design Pattern, bir yazılım sistemi içinde nesnelerin yapılandırılmasına ve bir araya getirilmesine odaklanan bir tasarım desenleri kategorisidir. Bu desenler, nesne yapılarındaki değişiklikleri yönetmek ve nesneler arasındaki ilişkileri daha esnek hale getirmek için kullanılır.
 

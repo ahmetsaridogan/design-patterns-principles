@@ -1,8 +1,8 @@
-# Creational Design Patterns Nedir?
+# Creational Design Patterns Nedir? (Yaratıcı Tasarım Kalıpları)
 
 Creational Design Patternler, nesnelerin yaratılmasını ve oluşturulmasını ele alan bir tasarım kalıbıdır. Bu tasarım kalıpları, nesnelerin yaratılması ile ilgili kod tekrarını azaltır, kodun bakımını kolaylaştırır ve nesne yaratma işlemini daha esnek hale getirir.
 
-## Singleton:
+## Singleton (Tekil):
 Bu kalıp, yalnızca bir örneği olan bir sınıf yaratmayı sağlar. Bu, bir uygulama içinde yalnızca bir örneğe ihtiyaç duyulduğu durumlarda faydalıdır. Örneğin, bir veritabanı bağlantısı nesnesi yalnızca bir kez yaratılabilir.
 
 ```ruby
@@ -20,7 +20,7 @@ end
 singleton_obj = SingletonClass.instance
 ```
 
-## Factory Method: 
+## Factory Method (Fabrika Yöntemi): 
 Bu kalıp, bir sınıfın alt sınıfları tarafından oluşturulan nesnelerin yaratılmasını ele alır. Bu, oluşturulacak nesnelerin türüne bağlı olarak farklı bir alt sınıfın kullanılması gerektiği durumlarda faydalıdır. Örneğin, bir oyunun farklı düşman türlerinin yaratılması için Factory Method kullanılabilir.
 
 ```ruby
@@ -58,7 +58,7 @@ car1.drive # "Driving sedan" çıktısı verir
 car2.drive # "Driving SUV" çıktısı verir
 ```
 
-## Abstract Factory: 
+## Abstract Factory (Soyut Fabrika): 
 Bu kalıp, ilgili nesnelerin bir arada yaratılmasını ele alır. Bu, bir uygulamanın farklı bileşenlerinde kullanılmak üzere uyumlu nesnelerin yaratılması gerektiği durumlarda faydalıdır. Örneğin, bir masaüstü uygulamasının kullanıcı arayüzü elemanlarını (butonlar, metin kutuları, vb.) yaratmak için Abstract Factory kullanılabilir.
 
 ```ruby
@@ -132,7 +132,7 @@ button.click # "Mac button clicked" çıktısı verir
 textbox.type("Hello") # "Mac textbox typed: Hello" çıktısı verir
 ```
 
-## Builder:
+## Builder (Yapılandırıcı):
 Bu kalıp, bir nesnenin yapısını adım adım oluşturmayı ele alır. Bu, bir nesnenin yapısı karmaşık ve farklı parçaların bir araya gelmesiyle oluştuğunda faydalıdır. Örneğin, bir araba nesnesi yapmak için Builder kullanılabilir.
 
 ```ruby
@@ -174,7 +174,7 @@ puts "Engine size: #{car.engine_size}"
 
 Bu örnekte, `CarBuilder` sınıfı bir araba nesnesi oluşturmak için kullanılan bir builder sınıfıdır. `build` metodunu kullanarak, tüm özellikleri atanmış bir `Car` nesnesi oluşturulur. Kullanıcı, `CarBuilder` örneği oluşturarak özellikleri tek tek belirleyebilir ve ardından `build` metodunu çağırarak son `Car` nesnesini alabilir. Bu yöntem, özelliklerin doğru sırayla atanmasını sağlar ve okunaklı bir kod yazmayı kolaylaştırır. 
 
-## Prototype:
+## Prototype (Klon):
 Bu kalıp, bir nesnenin önceden yaratılmış bir kopyasını kullanarak yeni bir nesne yaratmayı ele alır. Bu, bir uygulamanın farklı özelliklere sahip benzer nesneleri yaratması gerektiği durumlarda faydalıdır. Örneğin, bir grafik editörü programında birçok benzer şekil yaratmak için Prototype kullanılabilir.
 
 ```ruby

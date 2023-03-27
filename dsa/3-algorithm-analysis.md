@@ -39,7 +39,35 @@ Bu RAM modelinde Analiz yaparken bir bu varsayımlardan yola çıkacağız
 * Döngüler 1 birim zaman değil, içerisinde kaç defa işlem varsa iterasyon sayısı * işlem sayısı kadar birim zaman alır
 * Hafızadan her okuma işlemi içinde 1 birim zaman alır
 
-# Time Complexity
+# Time Complexity (Zaman Karmaşıklığı)
 Algoritmanın verimli olması için belli kurallar vardır.
+Bir algoritmanın çalışma zamanının veya işlem adımlarının niceliksel bir ölçüsüdür. Bu, verilerin boyutuna veya inputun büyüklüğüne bağlı olarak bir algoritmanın ne kadar zaman alacağını tahmin etmeye yarar.
 
-...devamı gelecek
+Time Complexity, Big O gösterimi kullanılarak ifade edilir ve genellikle algoritmanın en kötü durumda çalışma zamanını belirtir. Big O gösterimi, bir algoritmanın en kötü durumda kaç adım yürütebileceğini belirlerken, bir algoritmanın işlem adımlarını veri boyutuna göre ne kadar hızlı artırabileceğini de gösterir.
+
+* Kullanacağımız algoritmayı analiz etmek istiyoruz. Problem aynı olsa da farklı inputlar için algoritmamız farklı performans senaryoları üretebilir.
+
+* Diyelim ki bir kelimenin anlamını sözlükte arıyoruz, Arama için sayfalara tek tek bakıyoruz, burada algoritmamız sayfalara tek tek bakması, input da arağımız kelime
+
+* Aradığımız kelimenin boyutu aynı olsa bile hangi harfle başladığına göre yapacağımız işlem (sayfa çevirme) sayısı değişebilir. Yani input algoritmamızın yapacağı işlem sayısını etkilebiliyor.
+
+* Bu yüzden analizimizi 3 ana başlığa aytırabiliriz, worst case, avarage case, best case
+
+## Worst case: 
+Vereceğimiz input, algoritmamızı en yavaş (en fazla işlem yapacak) şekilde çalıştırdığını durumdur,
+Örneğin; aradığımız kelime "z" ile başlaması gibi.
+
+- Her algoritmaya göre worst case farklı, sözlüğe baştan değil de sondan bakmaya başlasaydık, "z" ile başlaması worst case olmazdı.
+
+## Avarage case:
+Genel olarak beklediğimiz durum, verilen inputlar sonucunda kaç sayfa çevireceğimiz yada kaç tane işlem yapacağımız durum.
+En zor analiz edilen durum
+
+## Best case:
+Vereceğimiz inputun algoritmamızı en hızlı şekilde çalıştırdığı durum,
+Örneğin "a" inputu sözlükte bir kaç sayfa çevirerek sonuca ulaşıyorum
+
+
+* Algorimamızın çalışmasını en iyi yansıtan average case, ama bu durumu analiz etmek diğerlerine göre çok daha zor. Inputların geldiği dağılımı bili ona göre analiz etmek gerekiyor.
+
+# Big O notation (Büyük O gösterimi)

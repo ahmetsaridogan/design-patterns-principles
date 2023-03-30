@@ -54,6 +54,7 @@ Time Complexity, Big O gösterimi kullanılarak ifade edilir ve genellikle algor
 * Bu yüzden analizimizi 3 ana başlığa aytırabiliriz, worst case, avarage case, best case
 
 ## Worst case: 
+Karşılacağımız en kötü durum,
 Vereceğimiz input, algoritmamızı en yavaş (en fazla işlem yapacak) şekilde çalıştırdığını durumdur,
 Örneğin; aradığımız kelime "z" ile başlaması gibi.
 
@@ -67,7 +68,54 @@ En zor analiz edilen durum
 Vereceğimiz inputun algoritmamızı en hızlı şekilde çalıştırdığı durum,
 Örneğin "a" inputu sözlükte bir kaç sayfa çevirerek sonuca ulaşıyorum
 
+### Örnek Senaryo
+Avarage case olarak baktığımız şey, alfabe a ile başlıyoruz z ile bitiyor bunun arasındaki hangi harf ile başlayan kelimeleri kaç sayfada yapıyor bakmak gibi bir şey değil, biz bunun ortalamasını alalım ne çok ne çok az gibi değil, burada bizim ihtiyaçımız olan şey inputlarını dağılımını bulmak lazım.
 
-* Algorimamızın çalışmasını en iyi yansıtan average case, ama bu durumu analiz etmek diğerlerine göre çok daha zor. Inputların geldiği dağılımı bili ona göre analiz etmek gerekiyor.
+Neden böyle bir şey var, Çünkü Avarage case aslında belki şöyle bir şey var, Türkçede e harfi ile başlayan kelimeler daha çok belkide, çok fazla e harfiyle başlayan kelimemiz var diyelim, o zaman bizim input olarak beklediğimiz şeyler e harfiyle başlaması daha yüksek olasılıklı olan şeyler olacak belkide, o yüzden belkide Avarage case etkisi e ile başlayanlar daha fazla olacak, 
+
+Biz çünkü "e" ile başlayan daha çok şey bekliyoruz gibi bir durum var, o yüzden bizim burada bu kadar basit değil, a ve z tam ortasını alalım gibi bir durum değil Avarage case.
+
+Avarage case bizim inputlarımızın genel olarak gerçek hayatta bekleyeceğimiz şey inputların dağılımı ile alakalı bir şey ve bu dağılımı bulmak bunlar üzerinde analizler yapmak genelde Worst case'den ve Best case'den daha zor oluyor.
+
+* Algorimamızın çalışmasını en iyi yansıtan average case, ama bu durumu analiz etmek diğerlerine göre çok daha zor. Inputların geldiği dağılımı bilip ona göre analiz etmek gerekiyor.
+
+* Genellikle Worst case'in analizi yapıldığı görülür. Worst case'e göre analiz yaparsak, performansımız için üst sınır çizmiş oluruz. Böylece worst case için bizi tatmin eden bir algoritmamız varsa, Avarage vase zaten bundan daha iyi (veya aynı) performans vereceği için o da bizi tatmin edecektir.
+
 
 # Big O notation (Büyük O gösterimi)
+
+* 100 sayfalık bir sözlük için iki farklı arama yöntemi düşünelim
+
+* A algoritması tek tek sayfalara bakıyor.
+
+* B algoritması sözlüğün alfabetik sıralanmış olduğundan yararlanarak en başta, en ortadaki sayfayı açıyor, eğer bu sayfadaki harfler aradığım kelimeden alfabetik olarak daha ilerdeyse sol tarafa aynısını yoksa sağ tarafa aynısını yapıyor.
+
+* Böylece problem her seferinde yarı boyutuna inmiş oluyor.
+
+* Birkaç durum üzerinden konuşalım. Diyelimki 100 sayfalık bir sözlüğümüz var. A algoritması en kötü durumda (aradaığım en son sayfadaysa) kaç işlem yapacak? 100 işlem yapacaktır. 
+
+* B algoritması en kötü durumda kaç işlem yapar? 2n = 100 (ortalama 6,7 işlem)
+
+* Bu örneğe bakarak RAM modeli üzerinde düşünürsek, 100/7  = (yaklaşık 15) hızında çıktı. A algoritması, B  algoritmasından 15 kat daha yavaş veya. B algoritması 15 katı daha hızlı, bu durum için bunu söyleyebiliriz.
+
+* Şöyle düşünelim, sözlüğümüz 10.000 elemanlı olsa, A algoritması en kötü durumda 10.000 işlem yapar ama B algoritması 2x = 10.000 yaklaşık 13 işlem yapar. 10.000 / 13 yaklaşık 770 katı hızında gözüküyor.
+
+* Bu yüzden algoritmaların sadece 1 input boyutuna göre karşılaştırmalarına bakıp kara veremeyiz, Genel yapsını bize gösterecek bir analize ihtiyaçımız var, işte burada Big O Notation devreye giriyor.
+
+* Big O Notation algortimanın ne kadar sürede çalışacağını söylemeyecek, bize algoritmamızın çalışma zamanını inputun boyutu ile nasıl değişeceğini söyleyecek.
+
+* Mesela sözlük örneğimizde input size'ımıza n dersek algoritmamızın en kötü durumda n işlem yaptığını söyleyebiliriz. Inputun n boyutunda olunca çalışma süremin de en kötü durumda n olmasını "O(n)" diye göstereceğiz, Aynı şekilde B algoritması için "O(log N)" diye gösterebiliriz.
+
+* Big O notation'da yapılacak toplam işlem sayısının input size ile nasıl scale olacağına bakıyoruz. Bizim için bu fonksiyon yapısı önemli
+
+* İşlem sayısı input size ile linear mı artıyor, karesi ile orantılı mı artıyor, yani logaritmik mi?
+
+* Karakteristiği önemsediğimiz için 2n işlem yapan algoritmaya da n işlem yapan algoritmaya da O(n) diyoruz, ikisi de linear bir şekilde artıyor. Big O Notation bakarken kat sayıları önemli değil
+
+* Analizimizin sonucu "2n^2 + 3n + 2" gibi bir şey çıktı diyelim. n büyüdükçe "3n + 2" nin etkisi 2n^2 'in yanında önemsiz kalacak. O yüzden dominant olanı Big O notation olarak yazabiliriz "O(n^2)"
+
+* Burada "n^2" özel bir durum değil aynısını "2n", "3n", "1/2n" için de geçerli, onların da Big O Notation'o "O(n)". Yapı ne olursa olsun katsayı yazılmıyor.
+
+* Bizim için önemli olan şey, bunun nasıl davrandığı linear mı? linear'se 2x eğilimi farklı oluyor ama yinede linear davranıyor. Biz inputumuzu değiştirdiğimizde linear bir davranış bekleyeceğiz, beklemeyecek miyiz? yoksa karesiyle artan bir artış bekleceğiz bunlar bizim için önemli. O yüzden Big O notationda kat sayılar önemli olmuyor.
+
+https://medium.com/kodcular/nedir-bu-big-o-notation-b8b9f1416d30
